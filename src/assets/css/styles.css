@@ -94,8 +94,8 @@ body {
     transition: 300ms all;
 }
 
-#menu a:hover {
-    color: #F13E3E;
+#menu a:hover, .active {
+    color: #F13E3E !important;
 }
 
 /* Slider o Marquesina */
