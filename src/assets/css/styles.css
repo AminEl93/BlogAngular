@@ -328,6 +328,24 @@ textarea {
     text-decoration: underline;
 }
 
+.year-green {
+    display: block;
+    width: 121px;
+    background: #04A812;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+.year-red {
+    display: block;
+    width: 121px;
+    background: #E70707;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
 /* Página de detalle de cada artículo */
 .article-detail .image-wrap {
     width: 100%;
