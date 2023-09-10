@@ -1,6 +1,8 @@
 # BlogAngular
 
-Este proyecto consiste en un blog de diferentes artículos creado con Angular. Se ha generado con la versión 16.0.3 de [Angular CLI](https://github.com/angular/angular-cli), con la versión 18.16.0 de NodeJS y con la versión 9.6.6 de npm. 
+Este proyecto consiste en un blog de diferentes artículos creado con Angular. Se ha generado con la versión 16.0.3 de [Angular CLI](https://github.com/angular/angular-cli), con la versión 18.16.0 de NodeJS y con la versión 9.6.6 de npm.
+
+Para iniciar la aplicación, escribir el comando: `npm run start` y acceder a la URL `http://localhost:4200/`.
 
 ## Development server
 
