@@ -5,8 +5,9 @@
 
         <div id="favorita" *ngIf="favorita">
             <h1 class="subheader">Película favorita</h1>
-            <h4>{{favorita.title}}</h4>
+            <h4>{{favorita.title | uppercase}}</h4>
             <h4>{{favorita.year}}</h4>
+            <h5>{{this.fecha | date: 'dd/MM/yyyy'}}</h5>
         </div>
 
         <br>

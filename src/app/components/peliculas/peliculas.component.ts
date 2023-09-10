@@ -11,6 +11,7 @@ export class PeliculasComponent implements OnInit {
     public title: string;
     public peliculas: Pelicula[];
     public favorita!: Pelicula;
+    public fecha: any;
 
     constructor() {
         this.title = "Componente de películas";
@@ -22,6 +23,7 @@ export class PeliculasComponent implements OnInit {
             new Pelicula ("Batman vs Superman", 2016, "https://www.hellofriki.com/wp-content/uploads/2016/04/bat_mtan.jpg"),
             new Pelicula ("Super Mario Bros", 2023, "https://assetsio.reedpopcdn.com/the-super-mario-bros-movie-poster-features-all-of-our-favori_xhvn.png?width=1600&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp")
         ];
+        this.fecha = new Date(2023, 3, 3);
     }
 
     ngOnInit() {
