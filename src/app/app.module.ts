@@ -13,6 +13,7 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { PaginaComponent } from './components/pagina/pagina.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErrorComponent } from './components/error/error.component';
+import { PeliculaComponent } from './components/pelicula/pelicula.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ErrorComponent } from './components/error/error.component';
     PeliculasComponent,
     PaginaComponent,
     FooterComponent,
-    ErrorComponent    
+    ErrorComponent,
+    PeliculaComponent    
   ],
   imports: [
     BrowserModule,
