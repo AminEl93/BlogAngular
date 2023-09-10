@@ -1,1 +1,36 @@
-<p>peliculas works!</p>
+<app-slider [nombre]="'Películas'" [size]="'small'"></app-slider>
+
+<div class="center">
+    <section id="content">
+
+        <div id="favorita" *ngIf="favorita">
+            <h1 class="subheader">Película favorita</h1>
+            <h4>{{favorita.title}}</h4>
+            <h4>{{favorita.year}}</h4>
+        </div>
+
+        <br>
+
+        <h1 class="subheader">Lista de las películas</h1>
+
+        <div id="articles" *ngIf="peliculas">
+            <div *ngFor="let pelicula of peliculas; let i = index;">
+                <app-pelicula [pelicula]="pelicula" (marcarFavorita)="mostrarFavorita($event)"></app-pelicula>
+            </div>
+        </div>
+
+        <br>
+
+        <h3>Primera película :</h3>
+        {{peliculas[0].title}}
+
+        <br> <br>
+
+        <h3>Número de películas :</h3>
+        {{peliculas.length}}
+
+        <br> <br>
+    </section>
+
+    <app-sidebar></app-sidebar>
+</div>
