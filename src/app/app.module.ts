@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MomentModule } from 'ngx-moment';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -40,7 +41,8 @@ import { ArticlesComponent } from './components/articles/articles.component';
     BrowserModule,
     routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MomentModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

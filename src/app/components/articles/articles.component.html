@@ -5,7 +5,7 @@
             <img src="assets/images/default-image.png" alt="{{article.title}}" *ngIf="!article.image"/>
         </div>
         <h3>{{article.title}}</h3>
-        <span class="date">{{article.date}}</span>
+        <span class="date">{{article.date | amLocale:'es' | amTimeAgo}}</span>
         <a href="#">Leer más</a>
 
         <!-- Limpiar los flotados -->
