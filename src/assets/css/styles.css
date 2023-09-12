@@ -14,6 +14,10 @@ body {
     margin: 0px auto;
 }
 
+.color-rojo {
+    color: red;
+}
+
 /* Limpiar los flotados */
 .clearfix {
     clear: both;
