@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/services/article.service';
+import { Article } from 'src/app/models/article';
+import { UrlGlobal } from 'src/app/services/global';
 
 @Component({
   selector: 'app-blog',
@@ -10,9 +12,34 @@ import { ArticleService } from 'src/app/services/article.service';
 
 export class BlogComponent implements OnInit {
 
-    constructor(private _articleService: ArticleService) { }
+    public articles!: Article[];
+    public url: string;
+
+    constructor(private _articleService: ArticleService) {
+        this.url = UrlGlobal.url;
+    }
 
     ngOnInit() {
-        console.log(this._articleService.pruebas());
+        this._articleService.getArticles().subscribe({
+            next: response => {
+                if(response.articles) {
+                    this.articles = response.articles;
+                } else { }
+            },
+            error: error => console.log(error)
+        });
     }
 }
+
+
+// Método decrapitado
+/*
+this._articleService.getArticles().subscribe(
+    response => {
+        console.log(response);
+    },
+    error => {
+        console.log(error);
+    }
+);
+*/
