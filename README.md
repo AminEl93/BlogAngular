@@ -1,25 +1,29 @@
 # BlogAngular
 
-Este proyecto consiste en un blog de diferentes artículos creado con Angular. Se ha generado con la versión 16.0.3 de [Angular CLI](https://github.com/angular/angular-cli), con la versión 18.16.0 de NodeJS y con la versión 9.6.6 de npm.
+Este proyecto consiste en un blog de diferentes artículos y películas creado con Angular. Se ha generado con la versión 16.0.3 de [Angular CLI](https://github.com/angular/angular-cli), con la versión 18.16.0 de NodeJS y con la versión 9.6.6 de npm.
 
-Para iniciar la aplicación, escribir el comando: `npm run start` y acceder a la URL `http://localhost:4200/`.
+## Iniciar aplicación y servidor de desarrollo
 
-## Development server
+Ejecutar el comando `npm run start` o `ng serve` y acceder a la URL `http://localhost:4200/`. La aplicación se recargará automáticamente si cambias alguno de los archivos fuente.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para mantener abierta la base de datos de los artículos, hay que seguir estos pasos:
+- Ejecutar el archivo `mongod.exe` en la carpeta `C:\Program Files\MongoDB\Server\6.0\bin`.
+- Abrir la consola, acceder a la carpeta dónde tengamos el backend (`...\Projects\Blog-Articulos\Backend`)
+  y ejecutar el comando `npm start`.
+- Tener abierto el Postman para consultar las diferentes URLs a las cuáles acceder.
 
-## Code scaffolding
+## Scaffolding de código
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecutar el comando `ng generate component component-name` para generar un nuevo componente. También puedes usar el comando `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Ejecutar el comando `ng build` para compilar el proyecto. Los artefactos de compilación se almacenarán en el directorio `dist/`.
 
-## Running unit tests
+## Ejecutar pruebas unitarias
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ejecutar el comando `ng test` para hacer las pruebas unitarias a través de [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Ejecutar pruebas end-to-end
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Ejecutar el comando `ng e2e` para hacer las pruebas end-to-end (extremo a extremo) a través de una plataforma de su elección. Para utilizar este comando, primero necesitas añadir un paquete que implemente capacidades de pruebas end-to-end.
