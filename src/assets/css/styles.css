@@ -204,7 +204,7 @@ body {
     margin-top: 10px;
 }
 
-/* Botones de crear artículo y de Buscar */
+/* Botones de crear, editar, borrar y buscar un artículo */
 .btn {
     display: block;
     max-width: 120px;
@@ -213,7 +213,8 @@ body {
     padding: 15px;
     font-size: 14px;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: none !important;
+    text-align: center;
     transition: 300ms all;
     border: none;
     cursor: pointer;
@@ -225,6 +226,27 @@ body {
 
 .btn-success:hover {
     background: black;
+}
+
+.btn-edit {
+    background: rgb(238, 165, 6);
+    color: black !important;  
+}
+
+.btn-delete {
+    background: rgb(201, 21, 21);
+    color: white !important;
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    transition: 300ms all;
+    opacity: 0.8;
+}
+
+.article-buttons {
+    display: flex;
+    margin-top: 25px;
+    gap: 20px;
 }
 
 /* Input del Buscador y Formulario */

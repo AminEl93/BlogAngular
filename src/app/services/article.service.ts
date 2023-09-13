@@ -24,4 +24,10 @@ export class ArticleService {
         if(last != null) { articles = 'articles/true'; }
         return this._http.get(this.url + articles); 
     }
+
+    // Petición AJAX al backend para obtener un artículo en concreto
+    getArticle(articleId: string): Observable<any> {
+        return this._http.get(this.url + 'article/' + articleId); 
+    }
+
 }
