@@ -12,7 +12,7 @@
         </div>
         <h3>{{article.title}}</h3>
         <span class="date">{{article.date | amLocale:'es' | amTimeAgo}}</span>
-        <a href="#">Leer más</a>
+        <a [routerLink]="['/blog/articulo', article._id]">Leer más</a>
 
         <!-- Limpiar los flotados -->
         <div class="clearfix"></div>
