@@ -21,6 +21,7 @@ import { EsParPipe } from './pipes/espar.pipe';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
+import { CreateComponent } from './components/create/create.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SearchComponent } from './components/search/search.component';
     EsParPipe,
     ArticlesComponent,
     ArticleComponent,
-    SearchComponent    
+    SearchComponent,
+    CreateComponent    
   ],
   imports: [
     BrowserModule,

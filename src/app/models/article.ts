@@ -3,7 +3,7 @@ export class Article {
         public _id: string,
         public title : string,
         public content : string,
-        public image: string,
+        public image: string|null,
         public date: any
     ){}
 }

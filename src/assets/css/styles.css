@@ -249,8 +249,8 @@ body {
     gap: 20px;
 }
 
-/* Input del Buscador y Formulario */
-input[type="text"], textarea {
+/* Input del Buscador, el Formulario y Crear artículo */
+input[type="text"], input[type="file"], textarea {
     width: 100%;
     min-height: 30px;
     border: 1px solid #CCC;
