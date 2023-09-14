@@ -15,6 +15,7 @@ export class CreateComponent implements OnInit {
     
     public article: Article;
     public status!: string;
+    public page_title: string;
 
     constructor(
         private _articleService: ArticleService,
@@ -22,6 +23,7 @@ export class CreateComponent implements OnInit {
         private _router: Router
     ) {
         this.article = new Article('', '', '', null, null);
+        this.page_title = 'Crear el artículo';
     }
 
     public options: ImageUploaderOptions = {

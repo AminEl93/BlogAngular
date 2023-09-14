@@ -1,7 +1,7 @@
 <div class="center">
     <section id="content">
 
-        <h1 class="subheader">Crear un artículo</h1>
+        <h1 class="subheader">{{page_title}}</h1>
 
         <!-- FORMULARIO -->
         <form class="mid-form" #articleForm="ngForm" (ngSubmit)="onSubmit()">
@@ -23,7 +23,7 @@
             
             <div class="form-group">
                 <label for="image">Imagen</label>
-                <ngx-image-uploader [options]="options" (upload)="imageUpload($event)"></ngx-image-uploader>
+                <!-- <ngx-image-uploader [options]="options" (upload)="imageUpload($event)"></ngx-image-uploader> -->
             </div>
 
             <!-- Limpiar los flotados -->

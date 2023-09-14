@@ -42,4 +42,17 @@ export class ArticleService {
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         return this._http.post(this.url + 'save', params, {headers: headers}); 
     }
+
+    // Editar un artículo
+    updateArticle(id: any, article: any): Observable<any> {
+        let params = JSON.stringify(article);
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.put(this.url + 'article/' + id, params, {headers: headers}); 
+    }
+
+    // Borrar un artículo
+    deleteArticle(id: any): Observable<any> {
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.delete(this.url + 'article/' + id, {headers: headers}); 
+    }
 }
