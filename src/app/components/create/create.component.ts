@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ArticleService } from 'src/app/services/article.service';
 import { Article } from 'src/app/models/article';
+import { UrlGlobal } from 'src/app/services/global';
+import { ImageUploaderOptions, FileQueueObject } from 'ngx-image-uploader-next';
 
 @Component({
   selector: 'app-create',
@@ -22,8 +24,19 @@ export class CreateComponent implements OnInit {
         this.article = new Article('', '', '', null, null);
     }
 
+    public options: ImageUploaderOptions = {
+        thumbnailHeight: 150,
+        thumbnailWidth: 410,
+        uploadUrl: UrlGlobal.url + 'upload-image',
+        allowedImageTypes: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'],
+        maxImageSize: 50,
+        autoUpload: false,
+        cropAspectRatio: 1,
+        fieldName: 'image'
+    };
+
     ngOnInit() {
-     
+        
     }
 
     onSubmit() {
@@ -42,5 +55,15 @@ export class CreateComponent implements OnInit {
                 this.status = 'error';
             }
         });
+    }   
+
+    // imageUpload(data: any){
+    //     let imageData = data.body.image;
+    //     this.article.image = imageData;
+    //     console.log(data);
+    // }
+    
+    imageUpload(data: FileQueueObject) {
+        this.article.image = data.response.body.image;
     }
 }

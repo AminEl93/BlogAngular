@@ -4,6 +4,7 @@ import { routing, appRoutingProviders } from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MomentModule } from 'ngx-moment';
+import { ImageUploaderModule } from 'ngx-image-uploader-next';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -48,7 +49,8 @@ import { CreateComponent } from './components/create/create.component';
     routing,
     FormsModule,
     HttpClientModule,
-    MomentModule
+    MomentModule,
+    ImageUploaderModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
