@@ -13,7 +13,7 @@
 
             <div class="article-buttons">
                 <a [routerLink]="['/blog/editar', article._id]" class="btn btn-edit">EDITAR</a>
-                <a href="#" class="btn btn-delete">BORRAR</a>
+                <a (click)="delete(article._id)" class="btn btn-delete">BORRAR</a>
             </div>
 
             <!-- Limpiar los flotados -->
