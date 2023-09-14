@@ -428,6 +428,21 @@ textarea {
     border: none;
 }
 
+/* Alertas */
+.swal2-popup {
+    font-size: 14px !important;
+}
+
+.swal2-title {
+    font-size: 23px;
+}
+
+.swal2-styled {
+    width: 115px;
+    height: 45px;
+    font-weight: bold;
+}
+
 /* Responsive */
 @media (max-width: 1488px) { /* Desde la anchura de 0px a la anchura de 1488px */
     .center {

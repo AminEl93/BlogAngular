@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ArticleService } from 'src/app/services/article.service';
 import { Article } from 'src/app/models/article';
-import { UrlGlobal } from 'src/app/services/global';
-import { ImageUploaderOptions, FileQueueObject } from 'ngx-image-uploader-next';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-article-edit',
@@ -39,6 +38,10 @@ export class ArticleEditComponent implements OnInit {
                 if(response.status == 'success') {
                     this.status = 'success';
                     this.article = response.articleUpdated;
+
+                    // Alerta
+                    Swal.fire('Artículo editado!', 'El artículo se ha editado correctamente', 'success');
+
                     this._router.navigate(['/blog/articulo', this.article._id]);
                 } else {
                     this.status = 'error';
@@ -47,6 +50,7 @@ export class ArticleEditComponent implements OnInit {
             error: error => {
                 console.log(error);
                 this.status = 'error';
+                Swal.fire('Edición fallida!', 'El artículo no se ha editado correctamente', 'error');
             }
         });
     }

@@ -4,6 +4,7 @@ import { ArticleService } from 'src/app/services/article.service';
 import { Article } from 'src/app/models/article';
 import { UrlGlobal } from 'src/app/services/global';
 import { ImageUploaderOptions, FileQueueObject } from 'ngx-image-uploader-next';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create',
@@ -47,6 +48,10 @@ export class CreateComponent implements OnInit {
                 if(response.status == 'success') {
                     this.status = 'success';
                     this.article = response.article;
+                    
+                    // Alerta
+                    Swal.fire('Artículo creado!', 'El artículo se ha creado correctamente', 'success');
+
                     this._router.navigate(['/blog']);
                 } else {
                     this.status = 'error';
