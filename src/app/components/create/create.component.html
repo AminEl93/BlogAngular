@@ -23,7 +23,11 @@
             
             <div class="form-group">
                 <label for="image">Imagen</label>
-                <!-- <ngx-image-uploader [options]="options" (upload)="imageUpload($event)"></ngx-image-uploader> -->
+                <div class="image-thumb" *ngIf="isEdit">
+                    <img src="{{url + 'get-image/' + article.image}}" alt="{{article.title}}" *ngIf="article.image"/>
+                    <img src="assets/images/default-image.png" alt="{{article.title}}" *ngIf="!article.image"/>
+                </div>
+                <ngx-image-uploader [options]="options" (upload)="imageUpload($event)"></ngx-image-uploader>
             </div>
 
             <!-- Limpiar los flotados -->

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ArticleService } from 'src/app/services/article.service';
 import { Article } from 'src/app/models/article';
+import { UrlGlobal } from 'src/app/services/global';
+import { ImageUploaderOptions, FileQueueObject } from 'ngx-image-uploader-next';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,6 +19,18 @@ export class ArticleEditComponent implements OnInit {
     public status!: string;
     public isEdit: boolean;
     public page_title: string;
+    public url: string;
+
+    public options: ImageUploaderOptions = {
+        thumbnailHeight: 150,
+        thumbnailWidth: 410,
+        uploadUrl: UrlGlobal.url + 'upload-image',
+        allowedImageTypes: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'],
+        maxImageSize: 50,
+        autoUpload: true,
+        cropAspectRatio: 1,
+        fieldName: 'image'
+    };
 
     constructor(
         private _articleService: ArticleService,
@@ -26,7 +40,8 @@ export class ArticleEditComponent implements OnInit {
         this.article = new Article('', '', '', null, null);
         this.isEdit = true;
         this.page_title = 'Editar el artículo';
-    }
+        this.url = UrlGlobal.url;
+    }   
 
     ngOnInit() {
         this.getArticle();
@@ -53,6 +68,17 @@ export class ArticleEditComponent implements OnInit {
                 Swal.fire('Edición fallida!', 'El artículo no se ha editado correctamente', 'error');
             }
         });
+    }
+
+    imageUpload(file: FileQueueObject) {
+        if (file.response.status == 200) {
+            if (file.response.body.image != '') {
+                this.article.image = file.response.body.image;
+            }
+            console.log('Se ha obtenido tu imagen de manera exitosa!');
+        } else {
+            console.log('Ha habido un error al subir tu imagen');
+        }
     }
 
     getArticle() {
